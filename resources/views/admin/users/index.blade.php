@@ -11,7 +11,24 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Users </div>
-
+                     @if(Session::has('flash_message1'))
+                    <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-info"></i> {{Session::get('flash_message1')}} </h4>
+                    </div>
+                    @endif
+                    @if(Session::has('flash_message2'))
+                    <div class="alert alert-info alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-info"></i> {{Session::get('flash_message2')}}</h4>
+                    </div>
+                    @endif
+                    @if(Session::has('flash_message3'))
+                    <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-info"></i>  {{Session::get('flash_message3')}}</h4>
+                    </div>
+                    @endif
                 <div class="panel-body">
                 <div class="table-responsive">
 
@@ -42,7 +59,7 @@
                                     'type' => 'submit',
                                     'class' => 'btn btn-danger btn-xs',
                                     'title' => 'Delete User',
-                                    'onclick'=>'return confirm("Confirm delete?")'
+                                    'onclick'=>'return confirm("Confirma Eliminar?")'
                             ));!!}
                         {!! Form::close() !!}
                     </td>

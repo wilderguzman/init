@@ -55,7 +55,9 @@ class RolesController extends Controller
         
         $roles->attachPermissions($request->input('permission_id'));
 
-        Session::flash('flash_message', 'Role added!');
+       
+
+        Session::flash('flash_message1', 'Role  '.$roles->id.' Añadido!');
 
         return redirect('admin/roles');
     }
@@ -116,7 +118,7 @@ class RolesController extends Controller
 
         $role->attachPermissions($request->input('permission_id'));
 
-        Session::flash('flash_message', 'Role updated!');
+        Session::flash('flash_message2', 'Role  '.$role->id.' Actualizado!');
 
         return redirect('admin/roles');
 
@@ -139,7 +141,7 @@ class RolesController extends Controller
     {
         Role::destroy($id);
 
-        Session::flash('flash_message', 'Role deleted!');
+        Session::flash('flash_message3', 'Role  '.$id.' Eliminado!');
 
         return redirect('admin/roles');
     }

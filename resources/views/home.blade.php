@@ -5,6 +5,22 @@
 @endsection
 
 
+@section('contentheader_title')
+    hola
+@endsection
+
+@section('contentheader_description')
+    hola decerip
+@endsection
+
+
+@section('enlaces')
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+    <li class="active">Here</li>
+@endsection
+
+
+
 @section('main-content')
 <div class="container">
 	<div class="row">

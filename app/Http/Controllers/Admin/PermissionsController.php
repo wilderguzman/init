@@ -47,9 +47,11 @@ class PermissionsController extends Controller
     {
         $this->validate($request, ['name' => 'required', 'display_name' => 'required', ]);
 
-        Permission::create($request->all());
+        $permissions=Permission::create($request->all());
 
-        Session::flash('flash_message', 'Permission added!');
+        
+
+        Session::flash('flash_message1', 'Permisos  '.$permissions->id.' Añadido!');
 
         return redirect('admin/permissions');
     }
@@ -96,7 +98,7 @@ class PermissionsController extends Controller
         $permission = Permission::findOrFail($id);
         $permission->update($request->all());
 
-        Session::flash('flash_message', 'Permission updated!');
+        Session::flash('flash_message2', 'Permisos  '.$permission->id.' Actualizado!');
 
         return redirect('admin/permissions');
     }
@@ -110,9 +112,9 @@ class PermissionsController extends Controller
      */
     public function destroy($id)
     {
-        Permission::destroy($id);
+       $permission= Permission::destroy($id);
 
-        Session::flash('flash_message', 'Permission deleted!');
+        Session::flash('flash_message3', 'Permisos  '.$id.' Eliminado!');
 
         return redirect('admin/permissions');
     }
